@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanskar | Biotechnology Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Animated background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <canvas id="dnaCanvas"></canvas>
+    <div class="grid-overlay"></div>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-text">Sanskar</span>
+      <span class="logo-bracket">/&gt;</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-item" data-label="01">Home</a></li>
+      <li><a href="#about" class="nav-item" data-label="02">About</a></li>
+      <li><a href="#skills" class="nav-item" data-label="03">Skills</a></li>
+      <li><a href="#projects" class="nav-item" data-label="04">Research</a></li>
+      <li><a href="#contact" class="nav-item" data-label="05">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-tag mono">
+        <span class="tag-dot"></span> B.Tech Biotechnology · MRIIRS
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line">SANSKAR</span>
+      </h1>
+      <div class="hero-subtitle">
+        <span class="typing-text" id="typingText"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-desc">
+        Decoding life one sequence at a time — passionate about gene manipulation,
+        genomic sequencing & tissue culture. Where biology meets innovation.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          <span>View Research</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Let's Connect</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Years Study</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Lab Projects</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Curiosity</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="dna-helix-wrap">
+        <div class="helix-strand strand-a"></div>
+        <div class="helix-strand strand-b"></div>
+        <div class="helix-rungs" id="helixRungs"></div>
+      </div>
+      <div class="molecule-ring ring-1"></div>
+      <div class="molecule-ring ring-2"></div>
+      <div class="molecule-ring ring-3"></div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span class="mono">scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-header">
+      <span class="section-num mono">// 02</span>
+      <h2 class="section-title">About <em>Me</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card bio-card">
+        <div class="card-glow"></div>
+        <div class="card-label mono">identity.json</div>
+        <div class="bio-avatar">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="avatar-icon">
+              <circle cx="40" cy="30" r="16" stroke="var(--accent-cyan)" stroke-width="2"/>
+              <path d="M10 70 Q40 50 70 70" stroke="var(--accent-cyan)" stroke-width="2" fill="none"/>
+              <circle cx="40" cy="30" r="8" fill="var(--accent-cyan)" fill-opacity="0.15"/>
+            </svg>
+          </div>
+          <div class="avatar-orbit">
+            <div class="orbit-dot"></div>
+          </div>
+        </div>
+        <h3 class="about-name">Sanskar</h3>
+        <p class="about-role mono">Biotech Student & Researcher</p>
+        <div class="about-badges">
+          <span class="badge">MRIIRS</span>
+          <span class="badge badge-green">B.Tech Biotech</span>
+          <span class="badge badge-purple">Future Researcher</span>
+        </div>
+      </div>
+
+      <div class="about-card traits-card">
+        <div class="card-glow glow-green"></div>
+        <div class="card-label mono">traits.log</div>
+        <div class="trait-list">
+          <div class="trait">
+            <div class="trait-icon">🧬</div>
+            <div>
+              <div class="trait-title">Gene Manipulation</div>
+              <div class="trait-desc mono">CRISPR, recombinant DNA & genomic engineering — my core passion</div>
+            </div>
+          </div>
+          <div class="trait">
+            <div class="trait-icon">🔬</div>
+            <div>
+              <div class="trait-title">Genomic Sequencing</div>
+              <div class="trait-desc mono">Reading and interpreting the language of life</div>
+            </div>
+          </div>
+          <div class="trait">
+            <div class="trait-icon">🌱</div>
+            <div>
+              <div class="trait-title">Tissue Culture</div>
+              <div class="trait-desc mono">Growing and sustaining life at the cellular level</div>
+            </div>
+          </div>
+          <div class="trait">
+            <div class="trait-icon">👥</div>
+            <div>
+              <div class="trait-title">Team Leadership</div>
+              <div class="trait-desc mono">Inspiring teams, managing goals, delivering results</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-card quote-card">
+        <div class="card-glow glow-purple"></div>
+        <div class="card-label mono">philosophy.txt</div>
+        <blockquote>
+          "The genome is the blueprint of life — understanding it is understanding ourselves. Every sequence decoded is a step toward curing what hurts humanity."
+        </blockquote>
+        <div class="quote-author mono">— Sanskar</div>
+        <div class="dna-code mono">ATCG·GCTA·TAGC·CGAT</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills" id="skills">
+    <div class="section-header">
+      <span class="section-num mono">// 03</span>
+      <h2 class="section-title">Core <em>Skills</em></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="cat-icon">🧬</span>
+          <span class="mono">Molecular Biology</span>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar" data-level="90" data-name="Gene Manipulation"></div>
+          <div class="skill-bar" data-level="85" data-name="Genomic Sequencing"></div>
+          <div class="skill-bar" data-level="82" data-name="PCR Techniques"></div>
+          <div class="skill-bar" data-level="78" data-name="CRISPR-Cas9"></div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="cat-icon">🔬</span>
+          <span class="mono">Lab Techniques</span>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar" data-level="88" data-name="Tissue Culture"></div>
+          <div class="skill-bar" data-level="80" data-name="Gel Electrophoresis"></div>
+          <div class="skill-bar" data-level="75" data-name="Microscopy"></div>
+          <div class="skill-bar" data-level="72" data-name="Bioinformatics"></div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="cat-icon">🚀</span>
+          <span class="mono">Soft Skills</span>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar" data-level="92" data-name="Team Management"></div>
+          <div class="skill-bar" data-level="88" data-name="Leadership"></div>
+          <div class="skill-bar" data-level="95" data-name="Hard Work & Dedication"></div>
+          <div class="skill-bar" data-level="85" data-name="Persuasive Communication"></div>
+        </div>
+      </div>
+    </div>
+    <div class="tools-row">
+      <div class="tools-label mono">// tools & technologies</div>
+      <div class="tools-list">
+        <span class="tool-tag">NCBI</span>
+        <span class="tool-tag">BLAST</span>
+        <span class="tool-tag">BioEdit</span>
+        <span class="tool-tag">ImageJ</span>
+        <span class="tool-tag">R Studio</span>
+        <span class="tool-tag">Python Bio</span>
+        <span class="tool-tag">MEGA X</span>
+        <span class="tool-tag">SnapGene</span>
+        <span class="tool-tag">Clustal</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / RESEARCH -->
+  <section class="section projects" id="projects">
+    <div class="section-header">
+      <span class="section-num mono">// 04</span>
+      <h2 class="section-title">Research <em>Work</em></h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card featured">
+        <div class="project-glow"></div>
+        <div class="project-num mono">01</div>
+        <div class="project-tag">Gene Editing</div>
+        <h3 class="project-title">CRISPR-Based Gene Silencing Study</h3>
+        <p class="project-desc">Investigated targeted gene disruption using CRISPR-Cas9 in model organisms, analyzing off-target effects and editing efficiency across multiple genomic loci.</p>
+        <div class="project-stack">
+          <span>CRISPR</span><span>Cas9</span><span>PCR</span><span>Sequencing</span>
+        </div>
+        <a href="#" class="project-link mono">view study →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-glow glow-green"></div>
+        <div class="project-num mono">02</div>
+        <div class="project-tag tag-green">Tissue Culture</div>
+        <h3 class="project-title">Callus Induction & Plant Regeneration</h3>
+        <p class="project-desc">Developed optimized MS media formulations for callus induction and shoot organogenesis in crop species, exploring hormone balance for maximum regeneration rates.</p>
+        <div class="project-stack">
+          <span>MS Media</span><span>Auxin</span><span>Cytokinin</span>
+        </div>
+        <a href="#" class="project-link mono">view study →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-glow glow-purple"></div>
+        <div class="project-num mono">03</div>
+        <div class="project-tag tag-purple">Genomics</div>
+        <h3 class="project-title">Comparative Genomic Sequence Analysis</h3>
+        <p class="project-desc">Performed phylogenetic analysis and sequence alignment of conserved regions across species using BLAST and MEGA X to study evolutionary divergence.</p>
+        <div class="project-stack">
+          <span>BLAST</span><span>MEGA X</span><span>Clustal</span>
+        </div>
+        <a href="#" class="project-link mono">view study →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-glow glow-orange"></div>
+        <div class="project-num mono">04</div>
+        <div class="project-tag tag-orange">Leadership</div>
+        <h3 class="project-title">Biotech Club — Team Lead</h3>
+        <p class="project-desc">Led a 12-member team at MRIIRS in organizing biotechnology workshops, science fairs and interdisciplinary research presentations across the institute.</p>
+        <div class="project-stack">
+          <span>Leadership</span><span>Event Mgmt</span><span>Teamwork</span>
+        </div>
+        <a href="#" class="project-link mono">learn more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="section-header">
+      <span class="section-num mono">// 05</span>
+      <h2 class="section-title">Get in <em>Touch</em></h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-left">
+        <p class="contact-intro">
+          Whether you're a fellow researcher, recruiter, or someone curious about the frontier of biotechnology — I'm always open to meaningful conversations.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:sanskar@example.com" class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <div class="contact-label mono">Email</div>
+              <div class="contact-value">sanskar@example.com</div>
+            </div>
+          </a>
+          <a href="https://github.com/sanskar" target="_blank" class="contact-item">
+            <span class="contact-icon">💻</span>
+            <div>
+              <div class="contact-label mono">GitHub</div>
+              <div class="contact-value">github.com/sanskar</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/sanskar" target="_blank" class="contact-item">
+            <span class="contact-icon">🔗</span>
+            <div>
+              <div class="contact-label mono">LinkedIn</div>
+              <div class="contact-value">linkedin.com/in/sanskar</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label mono">your_name</label>
+            <input type="text" class="form-input" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label mono">your_email</label>
+            <input type="email" class="form-input" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label mono">message</label>
+            <textarea class="form-input form-textarea" placeholder="Hey Sanskar, let's collaborate on..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">
+            <span>Send Message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo mono">&lt;Sanskar /&gt;</div>
+      <div class="footer-copy mono">© 2024 · Built with passion & 1000s of base pairs</div>
+      <div class="footer-sequence mono">5'—ATCG GCTA TAGC CGAT ATGC—3'</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
